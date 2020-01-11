@@ -27,7 +27,7 @@ SECRET_KEY = DJANGO_SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['heroku.auchi-slms.com']
+ALLOWED_HOSTS = ['auchi-slms.heroku.com']
 
 
 # Application definition
