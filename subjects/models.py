@@ -44,7 +44,7 @@ class Assignment(models.Model):
     deadline = models.DateField()
 
     def __str__(self):
-        return self.question
+        return str(self.question)
     
     class Meta:
         ordering = ('-student_class',)

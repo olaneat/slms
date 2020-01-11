@@ -54,5 +54,6 @@ def  check_assignment(request):
     staff = get_object_or_404(StaffProfile, user=request.user)
     staff_id = staff.staff_id
     subject_taken = Subject.objects.filter(staff_id=staff_id)
-    question =Assignment.objects.filter(question__icontains='question', subject=subject_taken)
+    assignment_question = Assignment.objects.filter(question__icontains='question', subject=subject_taken)
+    question =SubmitAssignment.objects.filter(question = assignment_question )
     return render(request, 'staffs/submitted_assignment.html', {'question':question})
