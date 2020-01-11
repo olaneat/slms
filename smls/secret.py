@@ -1,0 +1,4 @@
+PAYSTACK_SECRET_KEY = "sk_test_b8ceea9b1d7d6958335de66131349832c7378011"
+PAYSTACK_PUBLIC_KEY = "pk_test_ddd702e1b555af1548a67208299d4c25c8d8c25b"
+
+DJANGO_SECRET_KEY = 'bv7l$lo69w!%$1#yip-udjh4kx+wh52$t_%k1ylfom!kxri(9o'
