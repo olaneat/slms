@@ -13,7 +13,6 @@ def staff_index(request):
     staff = get_object_or_404(StaffProfile, user=request.user)
     teacher = staff.staff_id
     subjects = Subject.objects.filter(staff_id = teacher)
-    assignments = ()
     return render(request, 'staffs/index.html', locals())
 
 def download_assignment(request, path):
@@ -52,15 +51,8 @@ def edit_profile(request):
 
 @login_required
 def  check_assignment(request):
-    staff = get_object_or_404(StaffProfileForm, user=request.user)
+    staff = get_object_or_404(StaffProfile, user=request.user)
     staff_id = staff.staff_id
-    subject = Subject.objects.filter(staff_id=staff_id)
-    assignment = None
-    try:
-        question = Assigment.objects.filter(question__contain='question', subject=subject)
-    except assignment.DoesNotExist:
-        return Http404('no Assignment given yet')
-    try:
-        return render(request, 'staffs/submmited_assignment.html', {'submitted_assignment':submitted_assignment})
-    except ValueError:
-        return Http404('Not assignment found')
+    subject_taken = Subject.objects.filter(staff_id=staff_id)
+    question =Assignment.objects.filter(question__icontains='question', subject=subject_taken)
+    return render(request, 'staffs/submitted_assignment.html', {'question':question})

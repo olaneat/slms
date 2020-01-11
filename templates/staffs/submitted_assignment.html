@@ -1,0 +1,19 @@
+{% extends 'new_base.html' %}
+
+{% block content %}
+  <div class="container">
+    {% if subject %}
+      <ul>
+        {% for q in question %}
+          <li>
+            {{q.name}}
+          
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p> assignment given yet <p>
+    {% endif %}
+  
+  </div>
+{% endblock content %}

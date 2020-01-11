@@ -30,13 +30,9 @@ def add_subject_score(request):
 
 def student_result(request):
     students = get_object_or_404(UserProfile, user=request.user)
-    student = Student.objects.get(student_reg_no =students.student_id)
     term = get_object_or_404(Term, current_term = True)
     student_num = students.student_id
     session = get_object_or_404(Session, is_current_session = True)
-    subject_result = SubjectOffered.objects.filter(student_number = student_num, term=term)
+    subject_result = SubjectOffered.objects.filter(student_number = student_num, term=term, session=session )
     result = Result.objects.get(student_number=student_num, term=term, session=session)
-    if result:
-        return render(request, 'result/terminal_result.html', locals())
-    else:
-        return HttpResponse('No result for this candidate')
+    return render(request, 'result/terminal_result.html', locals())
