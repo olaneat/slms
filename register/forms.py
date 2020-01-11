@@ -41,14 +41,3 @@ class ParentSignupForm(UserCreationForm):
         user.is_parent = True
         user.save()
         return user
-
-class ClassMasterForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
-        model = UserRole
-
-    @transaction.atomic
-    def Save(self):
-        user = super().save(commit=False)
-        user.is_master = True
-        user.save()
-        return user

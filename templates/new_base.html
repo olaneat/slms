@@ -95,26 +95,16 @@
                       <li><a class=" menu__link" href="{% url 'result:add_scores' %}">Add Scores</a></li>
                       <li><a class=" menu__link" href="{% url 'staffs:give_assignment' %}">Give Assignment</a></li>
                       <li><a class=" menu__link" href="{% url 'logout' %}">Logout</a></li>
-                    {% elif user.is_authenticated and user.is_class_master %}                      
-                      <li><a class=" menu__link" href="{% url 'staffs:staff_index' %}">Home</a></li>
-                      <li><a class=" menu__link" href="{% url 'staffs:profile'  %}">Edit profile</a></li>
-                      <li><a class=" menu__link" href="{% url 'blog:index' %}">school Events</a></li>
-                      <li><a class=" menu__link" href="{% url 'staffs:staff_index' %}">Check Submitted Assignments</a></li>
-                      <li><a class=" menu__link" href="{% url 'result:add_scores' %}">Add Scores</a></li>
-                      <li> <a class=" menu__link" href="{% url 'result:update_result' %}">Update Result</a></li>
-                      <li><a class=" menu__link" href="{% url 'staffs:give_assignment' %}">Give Assignment</a></li>
-                      <li><a class=" menu__link" href="{% url 'logout' %}">Logout</a></li>
                     {% elif user.is_authenticated and user.is_parent %}
-                    <li><a class=" menu__link" href="{% url 'students:make_payment' %}">Pay School Fees</a></li>
+                      <li><a class=" menu__link" href="{% url 'students:make_payment' %}">Pay School Fees</a></li>
                       <li><a href="{% url 'blog:index' %}">school Events</a></li>
                       <li><a class=" menu__link" href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
-			          <li><a href="{% url 'blog:index' %}">Home</a></li>  
-	   	              <li><a href="{% url 'blog:index' %}">school Events</a></li>
-			          <li><a hre="">About</a></li>			  
-			          <li><a href="{% url 'register:student_signup' %}">student signup</a></li>
-			          <li><a href="{% url 'register:staff_signup' %}">staff signup</a></li>
-                      <li><a href="{% url 'register:class_master_signup' %}">class Master signup</a></li>
+			               <li><a href="{% url 'blog:index' %}">Home</a></li>  
+	   	               <li><a href="{% url 'blog:index' %}">school Events</a></li>
+			               <li><a hre="">About</a></li>			  
+			                <li><a href="{% url 'register:student_signup' %}">student signup</a></li>
+			                <li><a href="{% url 'register:staff_signup' %}">staff signup</a></li>
                       <li><a href="{% url 'register:parent_signup' %}">Parent signup</a></li>
                       <li><a href="{% url 'register:user_login' %}">Login</a></li>
 			                    	   

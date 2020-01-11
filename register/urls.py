@@ -1,4 +1,4 @@
-from .views import StaffSignUp, StudentSignUp, login, ParentSignUp, ClassMasterSignUp
+from .views import StaffSignUp, StudentSignUp, login, ParentSignUp
 from django.urls import path
 from . import views
 
@@ -8,6 +8,5 @@ urlpatterns = [
     path('staff-signup', StaffSignUp.as_view(), name='staff_signup' ),
     path('login', views.user_login, name='user_login'),
     path('parent_signup', ParentSignUp.as_view(), name='parent_signup'),
-    path('staff-signup', ClassMasterSignUp.as_view(), name='class_master_signup' )
 
 ]
