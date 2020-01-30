@@ -85,7 +85,7 @@
 				  	  <li><a class="menu__link" href="{% url 'students:profile'  %}">Edit profile</a></li>
 					  <li><a class=" menu__link" href="{% url 'shop:index' %}">Shop for school Items </a></li>
 					  <li><a class=" menu__link" href="{% url 'result:display_result' %}">Check Result</a></li>     
-                      <li><a class=" menu__link" hre="{% url 'students:make_payment' %}">Pay School Fees</a></li>                      
+                      <li><a class=" menu__link" href="{% url 'students:make_payment' %}">Pay School Fees</a></li>                      
                       <li><a class=" menu__link" href="{% url 'logout' %}">Logout</a></li>
 			        {% elif user.is_authenticated and user.is_staff %}                      
                       <li><a class=" menu__link" href="{% url 'staffs:staff_index' %}">Home</a></li>
